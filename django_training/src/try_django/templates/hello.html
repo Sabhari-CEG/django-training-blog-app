@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Hello {% endblock %}
+{% block content %}
+<h1>{{ variable }}</h1>
+
+<ol>
+{% for elem in blog_list %}
+    {% include 'blog/listInline.html' with blog_post=elem truncate=True detail=False %}
+{% endfor %}
+</ol>
+
+{% endblock %}
